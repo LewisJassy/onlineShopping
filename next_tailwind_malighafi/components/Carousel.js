@@ -18,9 +18,9 @@ export default function Carousel({ products }) {
           key={products[index]._id}
           src={products[index].banner}
           alt={products[index].name}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, x: 200 }} //start from right side
+          animate={{ opacity: 1, x: 0 }} //move to left side
+          exit={{ opacity: 0, x: -200}} //exit to left side
           transition={{ duration: 5 }} // Adjust the duration as needed
           style={{ width: '100%', height: 'auto', position: 'absolute' }}
         />
